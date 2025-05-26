@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> JavaScript Functions </h1>
+    <script>
+        function greetUser(name) {
+            alert(name)
+        }
+       
+        function welcomeUser(temperature, name) {
+            let temperature = 20;
+            if (temperature > 15) {
+                alert("It's hot outside," + name);
+            } else {
+                alert("It's cold outside," + name);
+            }
+        }
+let currentTemperature = 10;
+        welcomeUser(currentTemperature, "Matt");
+        welcomeUser(10, "Sarah");
+    </script>
+</body>
+</html>
