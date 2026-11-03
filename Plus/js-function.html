@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> JavaScript Functions </h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Functions | SheCodes Plus</title>
+  </head>
+  <body>
+    <h1>JavaScript Functions</h1>
+    <div id="messages"></div>
     <script>
-        function greetUser(name) {
-            alert(name)
+      let messages = document.querySelector("#messages");
+
+      function showMessage(text) {
+        messages.innerHTML += `<p>${text}</p>`;
+      }
+
+      function greetUser(name) {
+        showMessage(`Hello, ${name}!`);
+      }
+
+      function welcomeUser(temperature, name) {
+        if (temperature > 15) {
+          showMessage(`It's hot outside, ${name}`);
+        } else {
+          showMessage(`It's cold outside, ${name}`);
         }
-       
-        function welcomeUser(temperature, name) {
-            let temperature = 20;
-            if (temperature > 15) {
-                alert("It's hot outside," + name);
-            } else {
-                alert("It's cold outside," + name);
-            }
-        }
-let currentTemperature = 10;
-        welcomeUser(currentTemperature, "Matt");
-        welcomeUser(10, "Sarah");
+      }
+
+      let currentTemperature = 10;
+      greetUser("Sarah");
+      welcomeUser(currentTemperature, "Matt");
+      welcomeUser(20, "Sarah");
     </script>
-</body>
+  </body>
 </html>
