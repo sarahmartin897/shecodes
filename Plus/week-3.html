@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cities Challenge | SheCodes Plus</title>
     <style>
       li strong {
         color: red;
@@ -12,11 +12,7 @@
   </head>
   <body>
     <h1>SheCodes Challenge</h1>
-    <ul>
-      <li>Paris</li>
-      <li>Berlin</li>
-      <li>Moscow</li>
-    </ul>
+    <ul id="city-list"></ul>
 
     <script>
       let cities = [
@@ -34,8 +30,12 @@
         },
       ];
 
-      console.log(cities);
-      console.log(cities[1].name);
+      let cityList = document.querySelector("#city-list");
+
+      cities.forEach(function (city) {
+        let language = city.englishSpeaking ? "English-speaking" : "Not English-speaking";
+        cityList.innerHTML += `<li><strong>${city.name}</strong>, ${city.country}: ${language}</li>`;
+      });
     </script>
   </body>
 </html>
