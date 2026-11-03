@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dates | SheCodes Plus</title>
   </head>
   <body>
     <h1>Dates</h1>
     <h2>Tue Aug 13, 10:00, 2019</h2>
     <script>
       let now = new Date();
-
-      console.log(now.getFullYear());
 
       let h2 = document.querySelector("h2");
 
@@ -20,14 +18,20 @@
       let minutes = now.getMinutes();
       let year = now.getFullYear();
 
+      if (minutes < 10) {
+        minutes = `0${minutes}`;
+      }
+
       let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
       let day = days[now.getDay()];
 
-      let months = [];
+      let months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+      ];
+      let month = months[now.getMonth()];
 
-      let month = now.getMonth();
-
-      h2.innerHTML = `${day} Jan ${date}, ${hours}:${minutes}, ${year}`;
+      h2.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}, ${year}`;
     </script>
   </body>
 </html>
